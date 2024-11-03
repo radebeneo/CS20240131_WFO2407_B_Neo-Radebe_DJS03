@@ -140,7 +140,17 @@ applyFilters(filters) {
 showBookDetails(bookId) {
     const book = this.books.find(book => book.id === bookId);
     if (!book) return;
-    
+
+    // Update the details overlay with the selected book's information
+    document.querySelector('[data-list-active]').open = true;
+    document.querySelector('[data-list-blur]').src = book.image;
+    document.querySelector('[data-list-image]').src = book.image;
+    document.querySelector('[data-list-title]').innerText = book.title;
+    document.querySelector('[data-list-subtitle]').innerText = `${this.authors[book.author]} (${new Date(book.published).getFullYear()})`;
+    document.querySelector('[data-list-description]').innerText = book.description;
+},
+
+
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.querySelector('[data-settings-theme]').value = 'night'
     document.documentElement.style.setProperty('--color-dark', '255, 255, 255');
