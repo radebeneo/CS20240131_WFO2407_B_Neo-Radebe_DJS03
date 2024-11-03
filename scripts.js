@@ -4,6 +4,10 @@ const BookApp = {
     // Application properties
     books: books,           // Array of book objects
     authors: authors,       // Author data
+    genres: genres,         // Genre data
+    currentPage: 1,         // Tracks the current page in pagination
+    filteredBooks: books,   // Books after applying filters
+
 let page = 1;
 let matches = books
 
