@@ -130,6 +130,12 @@ applyFilters(filters) {
     this.currentPage = 1;  // Reset to the first page after applying filters
     this.renderBookList(this.currentPage);  // Render filtered book list
 
+    // Show or hide "no results" message based on filter results
+    document.querySelector('[data-list-message]').classList.toggle(
+        'list__message_show', this.filteredBooks.length === 0
+    );
+},
+
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.querySelector('[data-settings-theme]').value = 'night'
     document.documentElement.style.setProperty('--color-dark', '255, 255, 255');
