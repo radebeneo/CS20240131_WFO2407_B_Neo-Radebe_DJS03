@@ -8,6 +8,9 @@ const BookApp = {
     currentPage: 1,         // Tracks the current page in pagination
     filteredBooks: books,   // Books after applying filters
 
+    // Initializes the application by setting up UI and event listeners
+    init() 
+
 let page = 1;
 let matches = books
 
