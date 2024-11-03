@@ -15,34 +15,18 @@ const BookApp = {
         this.renderBookList();    // Render initial book list
         this.setupEventListeners();    // Attach event listeners
         this.applyTheme();    // Set theme based on user preference
-    }
+    },  
 
-let page = 1;
-let matches = books
+    // Populates a dropdown with options based on provided data
+    populateDropdown(selector, data, defaultOption) {
+        const dropdown = document.querySelector(selector);
+        dropdown.innerHTML = `<option value="any">${defaultOption}</option>`; // Add default option
+        for (const [id, name] of Object.entries(data)) {
+            dropdown.innerHTML += `<option value="${id}">${name}</option>`; // Populate dropdown
+        }
+    },
 
-const starting = document.createDocumentFragment()
 
-for (const { author, id, image, title } of matches.slice(0, BOOKS_PER_PAGE)) {
-    const element = document.createElement('button')
-    element.classList = 'preview'
-    element.setAttribute('data-preview', id)
-
-    element.innerHTML = `
-        <img
-            class="preview__image"
-            src="${image}"
-        />
-        
-        <div class="preview__info">
-            <h3 class="preview__title">${title}</h3>
-            <div class="preview__author">${authors[author]}</div>
-        </div>
-    `
-
-    starting.appendChild(element)
-}
-
-document.querySelector('[data-list-items]').appendChild(starting)
 
 const genreHtml = document.createDocumentFragment()
 const firstGenreElement = document.createElement('option')
