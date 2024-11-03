@@ -97,6 +97,11 @@ setupEventListeners() {
         document.querySelector('[data-search-overlay]').open = true;
         document.querySelector('[data-search-title]').focus();
     });
+
+    // Event to open the settings overlay
+    document.querySelector('[data-header-settings]').addEventListener('click', () => {
+        document.querySelector('[data-settings-overlay]').open = true;
+    });
     
 document.querySelector('[data-search-genres]').appendChild(genreHtml)
 
