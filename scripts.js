@@ -32,6 +32,21 @@ const BookApp = {
         const end = start + BOOKS_PER_PAGE;
         const fragment = document.createDocumentFragment();
 
+        // Create book preview buttons for each book in the current page slice
+        this.filteredBooks.slice(start, end).forEach(({ author, id, image, title }) => {
+            const element = document.createElement('button');
+            element.classList = 'preview';
+            element.setAttribute('data-preview', id);
+            element.innerHTML = `
+                <img class="preview__image" src="${image}" />
+                <div class="preview__info">
+                    <h3 class="preview__title">${title}</h3>
+                    <div class="preview__author">${this.authors[author]}</div>
+                </div>
+            `;
+            fragment.appendChild(element);
+        });
+
 
 const genreHtml = document.createDocumentFragment()
 const firstGenreElement = document.createElement('option')
