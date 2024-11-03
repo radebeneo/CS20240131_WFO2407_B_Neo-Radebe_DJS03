@@ -47,6 +47,9 @@ const BookApp = {
             fragment.appendChild(element);
         });
 
+        const listItems = document.querySelector('[data-list-items]');
+        listItems.innerHTML = '';    // Clear previous items
+        listItems.appendChild(fragment);    // Append new items
 
 const genreHtml = document.createDocumentFragment()
 const firstGenreElement = document.createElement('option')
