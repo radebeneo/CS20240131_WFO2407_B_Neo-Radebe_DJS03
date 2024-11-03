@@ -136,6 +136,11 @@ applyFilters(filters) {
     );
 },
 
+// Displays detailed information for a selected book
+showBookDetails(bookId) {
+    const book = this.books.find(book => book.id === bookId);
+    if (!book) return;
+    
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.querySelector('[data-settings-theme]').value = 'night'
     document.documentElement.style.setProperty('--color-dark', '255, 255, 255');
