@@ -102,7 +102,17 @@ setupEventListeners() {
     document.querySelector('[data-header-settings]').addEventListener('click', () => {
         document.querySelector('[data-settings-overlay]').open = true;
     });
-    
+
+     // Settings form submission to change theme
+     document.querySelector('[data-settings-form]').addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const { theme } = Object.fromEntries(formData);
+        this.updateTheme(theme);
+        document.querySelector('[data-settings-overlay]').open = false;
+    });
+},
+
 document.querySelector('[data-search-genres]').appendChild(genreHtml)
 
 const authorsHtml = document.createDocumentFragment()
