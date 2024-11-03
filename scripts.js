@@ -59,19 +59,16 @@ const BookApp = {
             <span class="list__remaining"> (${Math.max(0, this.filteredBooks.length - page * BOOKS_PER_PAGE)})</span>
         `;
     },
-    
-const genreHtml = document.createDocumentFragment()
-const firstGenreElement = document.createElement('option')
-firstGenreElement.value = 'any'
-firstGenreElement.innerText = 'All Genres'
-genreHtml.appendChild(firstGenreElement)
 
-for (const [id, name] of Object.entries(genres)) {
-    const element = document.createElement('option')
-    element.value = id
-    element.innerText = name
-    genreHtml.appendChild(element)
-}
+
+// Sets up event listeners for various UI actions
+setupEventListeners() {
+    // Search form submission
+    document.querySelector('[data-search-form]').addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        this.applyFilters(Object.fromEntries(formData));
+    });
 
 document.querySelector('[data-search-genres]').appendChild(genreHtml)
 
