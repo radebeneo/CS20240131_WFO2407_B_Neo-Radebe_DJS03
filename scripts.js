@@ -51,6 +51,15 @@ const BookApp = {
         listItems.innerHTML = '';    // Clear previous items
         listItems.appendChild(fragment);    // Append new items
 
+        // Update the "Show More" button state and remaining book count
+        const listButton = document.querySelector('[data-list-button]');
+        listButton.disabled = this.filteredBooks.length <= page * BOOKS_PER_PAGE;
+        listButton.innerHTML = `
+            <span>Show more</span>
+            <span class="list__remaining"> (${Math.max(0, this.filteredBooks.length - page * BOOKS_PER_PAGE)})</span>
+        `;
+    },
+    
 const genreHtml = document.createDocumentFragment()
 const firstGenreElement = document.createElement('option')
 firstGenreElement.value = 'any'
