@@ -11,6 +11,7 @@ const BookApp = {
     // Initializes the application by setting up UI and event listeners
     init() {
         this.populateDropdown('[data-search-genres]', this.genres, 'All Genres');    // Populate genre dropdown
+        this.populateDropdown('[data-search-authors]', this.authors, 'All Authors'); // Populate author dropdown
     }
 
 let page = 1;
