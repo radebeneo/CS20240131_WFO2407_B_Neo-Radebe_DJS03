@@ -12,6 +12,7 @@ const BookApp = {
     init() {
         this.populateDropdown('[data-search-genres]', this.genres, 'All Genres');    // Populate genre dropdown
         this.populateDropdown('[data-search-authors]', this.authors, 'All Authors'); // Populate author dropdown
+        this.renderBookList();    // Render initial book list
     }
 
 let page = 1;
