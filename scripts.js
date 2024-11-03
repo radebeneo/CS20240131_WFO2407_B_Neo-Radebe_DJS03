@@ -13,6 +13,8 @@ const BookApp = {
         this.populateDropdown('[data-search-genres]', this.genres, 'All Genres');    // Populate genre dropdown
         this.populateDropdown('[data-search-authors]', this.authors, 'All Authors'); // Populate author dropdown
         this.renderBookList();    // Render initial book list
+        this.setupEventListeners();    // Attach event listeners
+        this.applyTheme();    // Set theme based on user preference
     }
 
 let page = 1;
