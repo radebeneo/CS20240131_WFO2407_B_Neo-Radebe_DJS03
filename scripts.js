@@ -87,6 +87,11 @@ setupEventListeners() {
         document.querySelector('[data-search-overlay]').open = false;
     });
 
+    // Event to close the settings overlay
+    document.querySelector('[data-settings-cancel]').addEventListener('click', () => {
+        document.querySelector('[data-settings-overlay]').open = false;
+    });
+    
 document.querySelector('[data-search-genres]').appendChild(genreHtml)
 
 const authorsHtml = document.createDocumentFragment()
