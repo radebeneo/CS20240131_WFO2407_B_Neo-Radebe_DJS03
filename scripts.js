@@ -82,6 +82,11 @@ setupEventListeners() {
         if (previewId) this.showBookDetails(previewId);
     });
 
+    // Event to close the search overlay
+    document.querySelector('[data-search-cancel]').addEventListener('click', () => {
+        document.querySelector('[data-search-overlay]').open = false;
+    });
+
 document.querySelector('[data-search-genres]').appendChild(genreHtml)
 
 const authorsHtml = document.createDocumentFragment()
