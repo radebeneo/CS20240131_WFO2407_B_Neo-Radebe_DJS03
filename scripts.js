@@ -76,6 +76,12 @@ setupEventListeners() {
         this.renderBookList(this.currentPage);
     });
 
+    // Book preview click event to display book details
+    document.querySelector('[data-list-items]').addEventListener('click', (event) => {
+        const previewId = event.target.closest('.preview')?.dataset.preview;
+        if (previewId) this.showBookDetails(previewId);
+    });
+
 document.querySelector('[data-search-genres]').appendChild(genreHtml)
 
 const authorsHtml = document.createDocumentFragment()
