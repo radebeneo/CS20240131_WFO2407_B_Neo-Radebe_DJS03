@@ -119,6 +119,14 @@ applyFilters(filters) {
     const genreFilter = filters.genre;
     const authorFilter = filters.author;
 
+    // Filter books based on title, genre, and author
+    this.filteredBooks = this.books.filter(book => {
+        const matchesTitle = !titleFilter || book.title.toLowerCase().includes(titleFilter);
+        const matchesGenre = genreFilter === 'any' || book.genres.includes(genreFilter);
+        const matchesAuthor = authorFilter === 'any' || book.author === authorFilter;
+        return matchesTitle && matchesGenre && matchesAuthor;
+    });
+
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.querySelector('[data-settings-theme]').value = 'night'
     document.documentElement.style.setProperty('--color-dark', '255, 255, 255');
