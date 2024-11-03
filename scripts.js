@@ -1,4 +1,8 @@
-import { books, authors, genres, BOOKS_PER_PAGE } from './data.js'
+import { books, authors, genres, BOOKS_PER_PAGE } from './data.js';
+
+const BookApp = {
+    // Application properties
+    books: books,           // Array of book objects
 
 let page = 1;
 let matches = books
