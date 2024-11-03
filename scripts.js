@@ -127,6 +127,9 @@ applyFilters(filters) {
         return matchesTitle && matchesGenre && matchesAuthor;
     });
 
+    this.currentPage = 1;  // Reset to the first page after applying filters
+    this.renderBookList(this.currentPage);  // Render filtered book list
+
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.querySelector('[data-settings-theme]').value = 'night'
     document.documentElement.style.setProperty('--color-dark', '255, 255, 255');
