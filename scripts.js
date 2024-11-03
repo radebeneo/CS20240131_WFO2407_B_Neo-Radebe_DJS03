@@ -26,6 +26,11 @@ const BookApp = {
         }
     },
 
+    // Renders a list of books to the UI based on the current page
+    renderBookList(page = 1) {
+        const start = (page - 1) * BOOKS_PER_PAGE;
+        const end = start + BOOKS_PER_PAGE;
+        const fragment = document.createDocumentFragment();
 
 
 const genreHtml = document.createDocumentFragment()
