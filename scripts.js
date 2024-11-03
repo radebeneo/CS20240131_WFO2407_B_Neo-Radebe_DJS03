@@ -9,7 +9,9 @@ const BookApp = {
     filteredBooks: books,   // Books after applying filters
 
     // Initializes the application by setting up UI and event listeners
-    init() 
+    init() {
+        this.populateDropdown('[data-search-genres]', this.genres, 'All Genres');    // Populate genre dropdown
+    }
 
 let page = 1;
 let matches = books
