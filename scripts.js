@@ -70,6 +70,12 @@ setupEventListeners() {
         this.applyFilters(Object.fromEntries(formData));
     });
 
+    // Show more buttons for pagination
+    document.querySelector('[data-list-button]').addEventListener('click', () => {
+        this.currentPage++;
+        this.renderBookList(this.currentPage);
+    });
+
 document.querySelector('[data-search-genres]').appendChild(genreHtml)
 
 const authorsHtml = document.createDocumentFragment()
