@@ -91,6 +91,12 @@ setupEventListeners() {
     document.querySelector('[data-settings-cancel]').addEventListener('click', () => {
         document.querySelector('[data-settings-overlay]').open = false;
     });
+
+    // Event to open the search overlay
+    document.querySelector('[data-header-search]').addEventListener('click', () => {
+        document.querySelector('[data-search-overlay]').open = true;
+        document.querySelector('[data-search-title]').focus();
+    });
     
 document.querySelector('[data-search-genres]').appendChild(genreHtml)
 
